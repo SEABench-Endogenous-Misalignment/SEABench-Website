@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="View a SEABench task prompt and evaluation criteria.">
+  <title>SEABench · Task</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/bulma.min.css">
+  <link rel="stylesheet" href="../static/css/index.css">
+  <link rel="stylesheet" href="../traces/assets/traces.css">
+  <link rel="icon" type="image/png" href="../static/images/agent-icon.png?v=2">
+  <script defer src="assets/task.js"></script>
+</head>
+<body>
+  <header class="trace-topbar">
+    <div class="trace-container trace-topbar-inner">
+      <a class="trace-brand" href="../index.html">SEABench</a>
+      <a class="trace-brand-sub" href="index.html">/ task sequences</a>
+    </div>
+  </header>
+
+  <main class="trace-container run-layout task-detail-layout">
+    <a class="run-back" href="index.html">← Back to tasks</a>
+    <div id="task-loading" class="trace-empty">Loading task...</div>
+    <article id="task-detail" class="is-hidden">
+      <header class="task-detail-header">
+        <div id="task-kicker" class="run-kicker"></div>
+        <h1 id="task-title" class="title is-3"></h1>
+        <p id="task-meta" class="trace-muted"></p>
+      </header>
+      <section class="task-detail-card">
+        <h2 class="run-section-title">Task prompt</h2>
+        <pre id="task-prompt" class="task-prose"></pre>
+      </section>
+      <section class="task-detail-card">
+        <h2 id="criteria-heading" class="run-section-title">Evaluation criteria</h2>
+        <pre id="task-criteria" class="task-prose"></pre>
+      </section>
+      <section class="task-detail-card task-source-card">
+        <h2 class="run-section-title">Source</h2>
+        <p id="task-source"></p>
+      </section>
+    </article>
+    <div id="task-error" class="trace-empty is-hidden"></div>
+  </main>
+</body>
+</html>

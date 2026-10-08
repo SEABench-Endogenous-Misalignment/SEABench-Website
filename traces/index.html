@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse SEABench safety-test task traces.">
+  <title>SEABench · Safety-Test Traces</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/bulma.min.css">
+  <link rel="stylesheet" href="../static/css/index.css">
+  <link rel="stylesheet" href="assets/traces.css">
+  <link rel="icon" type="image/png" href="../static/images/agent-icon.png?v=2">
+  <script defer src="assets/common.js"></script>
+  <script defer src="assets/catalog.js"></script>
+</head>
+<body>
+  <header class="trace-topbar">
+    <div class="trace-container trace-topbar-inner">
+      <a class="trace-brand" href="../index.html">SEABench</a>
+      <span class="trace-brand-sub">/ safety-test traces</span>
+    </div>
+  </header>
+
+  <section class="trace-hero">
+    <div class="trace-container">
+      <h1 class="title is-2">Safety-test Reasoning Traces</h1>
+      <p class="subtitle is-5">
+        Browse reasoning traces and evaluator outcomes across models, categories, harm types, and evolution surfaces for the safety-test tasks.
+        Baseline runs are under the "none" evolution surface.
+      </p>
+    </div>
+  </section>
+
+  <main class="trace-container trace-main">
+    <section class="trace-controls" aria-label="Trace filters">
+      <div class="trace-filter-row">
+        <div class="select is-small"><select id="filter-model" aria-label="Filter by model"><option value="">All models</option></select></div>
+        <div class="select is-small"><select id="filter-safety" aria-label="Filter by safety outcome"><option value="">All safety outcomes</option><option value="passed">Safety passed</option><option value="failed">Safety failed</option></select></div>
+        <div class="select is-small"><select id="filter-utility" aria-label="Filter by utility outcome"><option value="">All utility outcomes</option><option value="passed">Utility passed</option><option value="failed">Utility failed</option></select></div>
+        <div class="select is-small"><select id="filter-surface" aria-label="Filter by evolution surface"><option value="">All evolution surfaces</option></select></div>
+        <div class="select is-small"><select id="filter-category" aria-label="Filter by category"><option value="">All categories</option></select></div>
+        <div class="select is-small"><select id="filter-harm" aria-label="Filter by harm type"><option value="">All harm types</option></select></div>
+        <label class="trace-search"><span aria-hidden="true">⌕</span><input id="filter-search" class="input is-small" type="search" placeholder="Search traces…" aria-label="Search traces"></label>
+      </div>
+      <div class="trace-view-row">
+        <div class="select is-small"><select id="group-by" aria-label="Group traces"><option value="category">Group by category</option><option value="harm_type">Group by harm type</option><option value="surface">Group by surface</option><option value="model">Group by model</option><option value="none">No grouping</option></select></div>
+        <div class="select is-small"><select id="sort-by" aria-label="Sort traces"><option value="safety">Safety failures first</option><option value="utility">Utility failures first</option><option value="task">Task ID</option><option value="turns-desc">Longest reasoning</option><option value="turns-asc">Shortest reasoning</option></select></div>
+        <span class="trace-spacer"></span>
+        <span id="trace-count" class="trace-muted"></span>
+        <button id="clear-filters" class="trace-link-button is-hidden" type="button">Clear filters</button>
+      </div>
+    </section>
+
+    <div id="trace-groups"></div>
+    <div id="trace-loading" class="trace-empty">Loading traces…</div>
+    <div id="trace-empty" class="trace-empty is-hidden">No traces match these filters.</div>
+  </main>
+</body>
+</html>

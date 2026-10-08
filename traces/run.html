@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A SEABench safety-test task trace.">
+  <title>SEABench · Trace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/bulma.min.css">
+  <link rel="stylesheet" href="../static/css/index.css">
+  <link rel="stylesheet" href="assets/traces.css">
+  <link rel="icon" type="image/png" href="../static/images/agent-icon.png?v=2">
+  <script defer src="assets/common.js"></script>
+  <script defer src="assets/run.js"></script>
+</head>
+<body>
+  <header class="trace-topbar">
+    <div class="trace-container trace-topbar-inner">
+      <a class="trace-brand" href="../index.html">SEABench</a>
+      <a class="trace-brand-sub" href="index.html">/ safety-test traces</a>
+    </div>
+  </header>
+
+  <div class="run-layout">
+    <aside class="run-rail">
+      <a id="back-link" class="run-back" href="index.html">← Back to traces</a>
+      <section class="run-summary-card">
+        <p id="summary-task" class="run-kicker"></p>
+        <h1 id="summary-title" class="title is-5">Loading trace…</h1>
+        <p id="summary-model" class="trace-muted"></p>
+        <div id="summary-outcomes" class="run-outcomes"></div>
+        <dl id="summary-stats" class="run-stats"></dl>
+        <p class="run-kicker run-id-label">Trace ID</p>
+        <code id="summary-id" class="run-id"></code>
+      </section>
+    </aside>
+
+    <main class="run-main">
+      <nav class="run-tabs" role="tablist" aria-label="Trace sections">
+        <button class="run-tab is-active" data-tab="reasoning" type="button">Reasoning trace</button>
+        <button class="run-tab" data-tab="task" type="button">Task &amp; answer</button>
+        <button class="run-tab" data-tab="evaluation" type="button">Evaluation</button>
+      </nav>
+      <section id="tab-reasoning" class="run-section is-active">
+        <div class="run-toolbar">
+          <span id="reasoning-count" class="trace-muted"></span><span class="trace-spacer"></span>
+          <div class="trace-segmented" role="group" aria-label="Reasoning detail"><button id="view-turns" class="is-active" type="button">Turns</button><button id="view-units" type="button">Units</button></div>
+          <input id="jump-to" class="input is-small run-jump" type="number" min="1" placeholder="#" aria-label="Jump to reasoning item">
+        </div>
+        <div id="reasoning-timeline" class="reasoning-timeline"></div>
+      </section>
+      <section id="tab-task" class="run-section">
+        <h2 class="run-section-title">Task prompt</h2><div id="task-prompt" class="run-prose run-block"></div>
+        <h2 class="run-section-title">Final answer</h2><div id="final-answer" class="run-prose run-block"></div>
+      </section>
+      <section id="tab-evaluation" class="run-section"><div id="evaluation"></div></section>
+      <div id="run-error" class="trace-empty is-hidden"></div>
+    </main>
+  </div>
+</body>
+</html>

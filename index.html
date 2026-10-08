@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Primary Meta Tags -->
+  <!-- TODO: Replace with your paper title and author names -->
+  <meta name="title" content="PAPER_TITLE - AUTHOR_NAMES">
+  <!-- TODO: Write a compelling 150-160 character description of your research -->
+  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <!-- TODO: Add 5-10 relevant keywords for your research area -->
+  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
+  <!-- TODO: List all authors -->
+  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <!-- TODO: Replace with your institution or lab name -->
+  <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
+  <!-- TODO: Same as paper title above -->
+  <meta property="og:title" content="PAPER_TITLE">
+  <!-- TODO: Same as description above -->
+  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <!-- TODO: Replace with your actual website URL -->
+  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
+  <!-- TODO: Create a 1200x630px preview image and update path -->
+  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
+  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
+  <meta property="article:author" content="FIRST_AUTHOR_NAME">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="KEYWORD1">
+  <meta property="article:tag" content="KEYWORD2">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: Replace with your lab/institution Twitter handle -->
+  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
+  <!-- TODO: Replace with first author's Twitter handle -->
+  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
+  <!-- TODO: Same as paper title above -->
+  <meta name="twitter:title" content="PAPER_TITLE">
+  <!-- TODO: Same as description above -->
+  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <!-- TODO: Same as social preview image above -->
+  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="PAPER_TITLE">
+  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
+  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
+  <meta name="citation_publication_date" content="2024">
+  <meta name="citation_conference_title" content="CONFERENCE_NAME">
+  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+  <!-- TODO: Replace with your paper title and authors -->
+  <title>SEABench</title>
+  
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/png" href="static/images/agent-icon.png?v=2">
+  <link rel="apple-touch-icon" href="static/images/agent-icon.png?v=2">
+  
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <!-- TODO: Replace with your paper title -->
+            <h1 class="title is-1 publication-title">SEABench: Benchmarking Endogenous Misalignment in Self-Evolving Agents</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- TODO: Replace with your paper authors and their personal links -->
+              <span class="author-block">
+                <a href="https://saswatdas.com">Saswat Das</a><sup>1</sup>,</span>
+                <span class="author-block">
+                  Parvati Viswanathan<sup>1</sup>,
+                </span>
+                <span class="author-block">
+                  Daniel Donnelly<sup>2,3,4</sup>,
+                </span>
+                <span class="author-block">
+                  Chang Huang<sup>1</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://s-abdelnabi.github.io">Sahar Abdelnabi</a><sup>2,3,4</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://nandofioretto.github.io">Ferdinando Fioretto</a><sup>1</sup>
+                </span>
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <sup>1</sup>University of Virginia&nbsp;&nbsp;&nbsp;
+                  <sup>2</sup>ELLIS Institute Tübingen<br>
+                  <sup>3</sup>Max Planck Institute for Intelligent Systems&nbsp;&nbsp;&nbsp;
+                  <sup>4</sup>Tübingen AI Center<br>
+                </span>
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block">
+                    <a href="https://arxiv.org/pdf/2609.35596" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+
+                  <span class="link-block">
+                    <a href="https://github.com/SEABench-Endogenous-Misalignment/SEABench" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2609.35596" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                  <a href="#BibTeX" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-quote-left"></i>
+                    </span>
+                    <span>BibTeX</span>
+                  </a>
+                </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Introduction schematic -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img class="schematic-image" src="static/images/SEABench_Schematic_Sep16_page-0001.jpg" alt="SEABench schematic" loading="lazy">
+      <h2 class="subtitle has-text-centered">
+        <strong>Figure 1: Endogenous misalignment.</strong> Self-evolving agents produce unsafe behavior despite locally useful updates.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- Same-page navigation -->
+<nav class="section-jump-nav" aria-label="Sections on this page">
+  <div class="container is-max-desktop section-jump-inner">
+    <span class="section-jump-label">On this page</span>
+    <div class="section-jump-links">
+      <a href="#explore-seabench">SEABench Tasks</a>
+      <a href="#failure-discovery-pipeline">Failure Discovery Pipeline</a>
+      <a href="#effects-of-self-evolution">Results</a>
+      <a href="#reasoning-trace-analysis">Reasoning-Trace Analysis</a>
+      <a href="#extend-seabench">Extend SEABench</a>
+    </div>
+  </div>
+</nav>
+<!-- End same-page navigation -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          Self-evolving LLM agents have gained prominence for their ability to improve after deployment by modifying their harness, including their controller instructions, memory management protocols, and reusable tools and skills, in response to user and environment feedback. However, locally useful updates may persist into later tasks where they produce unsafe behavior, even without direct adversarial influence. To study this risk, we introduce SEABench, a benchmark for studying endogenous misalignment arising from agent self-evolution, with 48 longitudinal task sequences that span multiple evolution surfaces, task domains, and harm types in a rich personal-assistant environment. To account for the stochasticity inherent in agentic operations, we provide an adaptive trajectory discovery pipeline that probes for failures while preserving original task intent and supports causal attribution through paired non-evolving agents and attribution scores. Our evaluation across multiple recent LLMs, evolution surfaces, and harm types reveals that self-evolution indeed increases task completion rates but often at the cost of safety failures that are absent for paired non-evolving baseline agents. We also show that qualitatively different safety behaviors emerge across evolution surfaces and harm types. Further, we show that this divergence in safety behavior is reflected in agents' chain-of-thought reasoning, which yields an effective monitoring strategy that can mitigate unsafe behavior with a low false positive rate.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Explore SEABench -->
+<section class="section" id="explore-seabench">
+  <div class="container is-max-desktop">
+    <h2 class="title is-4">SEABench Tasks</h2>
+    <div class="content">
+      <p>SEABench contains 48 longitudinal task sequences spanning multiple task domains and harm types, in a personal-assistant environment. Each task sequence contains 5 evolution tasks and 5 safety-test tasks.  During the upstream evolution tasks, the agent acts on user requests with self-evolutional capabilities, allowing it to reflect on user and environment feedback and modify its behavior accordingly for the active evolution surface. Safety-test tasks are then used with further evolution disabled, to probe for safety failures on the evolved agent. </p>
+      <p>Browse the <a href="tasks/">task prompts</a> used in the 48 sequences, or view an <a href="https://colab.research.google.com/github/SEABench-Endogenous-Misalignment/seabench/blob/master/notebooks/SEABench_Explore_and_Extend.ipynb" target="_blank" rel="noopener">interactive Colab notebook</a> to run and extend the benchmark.</p>
+    </div>
+  </div>
+</section>
+<!-- End explore SEABench -->
+
+
+
+<!-- Research figures -->
+<section class="section" id="failure-discovery-pipeline">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered is-multiline">
+      <div class="column is-full">
+        <h2 class="title is-4">Failure Discovery Pipeline</h2>
+        <!--<img src="static/images/TextGrad_Pipeline_page-0001.jpg" alt="TextGrad pipeline" loading="lazy">-->
+        <p>A predetermined sequence does not guarantee a unique agent trajectory, and this stochasticity can further compound with the effects of self-evolution. The TextGrad-based failure discovery pipeline starts from an existing task sequence and probes for safety failures through candidate task search and paired evaluation pipeline to find trajectories with endogenous misalignment.</p>
+
+        <div class="pipeline-walkthrough">
+          <div class="pipeline-walkthrough-frame" role="img" aria-label="The failure discovery pipeline builds from the task sequence to TextGrad rewriting, paired evaluation, and the refined sequence">
+            <img class="pipeline-layout-image" src="static/images/TextGrad_Pipeline_page-0001.jpg" alt="" loading="lazy">
+            <img class="pipeline-reveal-stage pipeline-reveal-stage-1" src="static/images/TextGrad_Pipeline_page-0001.jpg" alt="" aria-hidden="true">
+            <img class="pipeline-reveal-stage pipeline-reveal-stage-2" src="static/images/TextGrad_Pipeline_page-0001.jpg" alt="" aria-hidden="true">
+            <img class="pipeline-reveal-stage pipeline-reveal-stage-3" src="static/images/TextGrad_Pipeline_page-0001.jpg" alt="" aria-hidden="true">
+            <img class="pipeline-reveal-stage pipeline-reveal-stage-4" src="static/images/TextGrad_Pipeline_page-0001.jpg" alt="" aria-hidden="true">
+            <img class="pipeline-reveal-stage pipeline-reveal-stage-5" src="static/images/TextGrad_Pipeline_page-0001.jpg" alt="" aria-hidden="true">
+          </div>
+          <div class="pipeline-stage-key" aria-hidden="true">
+            <span class="pipeline-stage-label-1">1. Task sequence</span>
+            <span class="pipeline-stage-label-2">2. TextGrad rewrite</span>
+            <span class="pipeline-stage-label-3">3. Paired evaluation</span>
+            <span class="pipeline-stage-label-4">4. Feedback loop</span>
+            <span class="pipeline-stage-label-5">5. Refined sequence</span>
+          </div>
+          <p class="figure-caption"><strong>Figure 2: Failure discovery pipeline.</strong> TextGrad rewrites an existing task sequence, paired evaluation tests the candidates, and the best candidate becomes the refined sequence.</p>
+          <!--<p><strong>Failure Discovery Pipeline:</strong> TextGrad-based candidate task search and paired evaluation pipeline finds trajectories with endogenous misalignment.</p>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End research figures -->
+
+
+<!-- Key results -->
+<section class="section results-summary" id="effects-of-self-evolution">
+  <div class="container is-max-desktop">
+    <h2 class="title is-4">Self-evolution improves utility, but can increase safety failures due to overgeneralization of local updates</h2>
+    <p class="results-intro">The stress-test pipeline reveals a capability–safety tradeoff from self-evolution: evolved agents generally improve downstream task completion, but at the same time introduce substantial safety failures that are absent in paired unevolved agent runs which are linked to the self-evolution updates. The general trend seen for safety failures is the overgeneralization of previous locally useful updates to broader contexts, beyond the situations in which they were initially beneficial. </p>
+
+    <div class="columns is-variable is-4 result-columns">
+      <div class="column is-half">
+        <article class="result-card result-card-utility">
+          <div class="result-card-heading">
+            <span class="result-icon" aria-hidden="true"><i class="fas fa-arrow-trend-up"></i></span>
+            <span class="result-kicker">Utility</span>
+          </div>
+          <!-- Replace with the reported aggregate utility increase. -->
+          <p class="result-value">+12.5%</p>
+          <h3 class="result-label">Increase in task completion</h3>
+          <p class="result-context">Self-evolution increased overall task completion from 35.7% to 47.2% though it decreased on one model-surface combination.</p>
+        </article>
+      </div>
+
+      <div class="column is-half">
+        <article class="result-card result-card-safety">
+          <div class="result-card-heading">
+            <span class="result-icon" aria-hidden="true"><i class="fas fa-triangle-exclamation"></i></span>
+            <span class="result-kicker">Safety</span>
+          </div>
+          <!-- Replace with the reported aggregate increase in safety failures. -->
+          <p class="result-value">+43.9%</p>
+          <h3 class="result-label">Increase in safety failures</h3>
+          <p class="result-context">Self-evolution increased safety failures from 0% to 43.9% over all observed final trajectories.</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="qualitative-analysis">
+      <!--<p class="qualitative-intro">Across harm types, failures arise when locally useful updates are overgeneralized: contextual boundaries collapse, guardrails erode, incomplete information is filled with plausible details, and pressure for completeness exposes sensitive information. Real-world coordination and computer-use tasks are most vulnerable, while personal admin is comparatively safer. Tools/skills is the riskiest evolution surface because unsafe task-specific logic can become executable procedures and directly reusable, followed by controller and memory updates that promote unsafe defaults or lose contextual scope. By model, \kimiktwopointfive{} exhibits the highest failure rate and strongest tendency to generalize shortcuts, \grokfourpointthree{} shows intermediate vulnerability through assumed authorization and overconfidence, and \gptfivepointsixluna{} has the lowest rate but can reinforce safety too narrowly</p>-->
+
+      <div class="radar-grid">
+        <figure class="radar-figure">
+          <a href="static/images/radar_model_by_surface_no_legend_aligned_sep24_page-0001.jpg" target="_blank" rel="noopener" aria-label="Open evolution-surface radar plot at full size">
+            <img src="static/images/radar_model_by_surface_no_legend_aligned_sep24_page-0001.jpg" alt="Safety-failure rates for GPT 5.6 Luna, Grok 4.3, and Kimi K2.5 across controller updates, memory, and tools or skills" loading="lazy" decoding="async">
+          </a>
+          <figcaption><strong>Figure 3: Safety failures by evolution surface.</strong> GPT 5.6 Luna and Grok 4.3 have the most safety failures on tools/skills, while Kimi K2.5 peaks on memory.</figcaption>
+        </figure>
+
+        <figure class="radar-figure">
+          <a href="static/images/radar_model_by_harm_no_legend_aligned_sep24_page-0001.jpg" target="_blank" rel="noopener" aria-label="Open harm-type radar plot at full size">
+            <img src="static/images/radar_model_by_harm_no_legend_aligned_sep24_page-0001.jpg" alt="Safety-failure rates for GPT 5.6 Luna, Grok 4.3, and Kimi K2.5 across hallucination, privacy, guardrail erosion, and boundary collapse" loading="lazy" decoding="async">
+          </a>
+          <figcaption><strong>Figure 4: Safety failures by harm type.</strong> Failure profiles differ across hallucination, privacy, guardrail erosion, and boundary collapse.</figcaption>
+        </figure>
+
+        <figure class="radar-figure">
+          <a href="static/images/radar_model_by_domain_no_legend_aligned_sep24_page-0001.jpg" target="_blank" rel="noopener" aria-label="Open task-domain radar plot at full size">
+            <img src="static/images/radar_model_by_domain_no_legend_aligned_sep24_page-0001.jpg" alt="Safety-failure rates for GPT 5.6 Luna, Grok 4.3, and Kimi K2.5 across computer use, professional activities, personal administration, and real-world coordination" loading="lazy" decoding="async">
+          </a>
+          <figcaption><strong>Figure 5: Safety failures by task domain.</strong> Kimi K2.5 is most failure-prone in computer use and real-world coordination, while Grok 4.3 peaks in personal admin.</figcaption>
+        </figure>
+      </div>
+
+      <img class="radar-common-legend" src="static/images/radar_model_common_legend_page-0001.jpg" alt="Legend: GPT 5.6 Luna is blue, Grok 4.3 is orange, and Kimi K2.5 is green" loading="lazy" decoding="async">
+    </div>
+
+  </div>
+</section>
+<!-- End key results -->
+
+
+<!-- Reasoning-trace analysis -->
+<section class="section reasoning-analysis" id="reasoning-trace-analysis">
+  <div class="container is-max-desktop">
+    <div class="reasoning-header">
+      <h2 class="title is-4">Reasoning traces reveal the safety gap between evolved and baseline agent</h2>
+    </div>
+    <div class="reasoning-layout">
+      <div class="reasoning-copy">
+        <p>We represented each of the 480 Kimi K2.5 reasoning traces from the safety-test tasks as a DAG (Directed Acyclic Graph), and used an outcome-blind annotator to follow unsupported claims, sensitive information, planned actions, and safeguards in the reasoning trace. General reasoning patterns remained similar, but the safety-critical patterns diverged between evolved and non-evolved agent. The energy distance between evolved and unevolved agents was <strong>0.057</strong> for safety reasoning versus <strong>0.023</strong> for general reasoning: a <strong>2.5&times;</strong> larger shift. Browse the <a href="traces/">reasoning traces for safety-test tasks</a>.</p>
+        <p>On held-out traces, a multi-stage chain-of-thought monitor prevented 56 of 79 harmful outputs. Monitoring is less effective when the defect is hidden inside an invoked tool or skill rather than expressed in the reasoning trace.</p>
+      </div>
+
+      <div class="reasoning-figures">
+        <figure class="reasoning-figure">
+          <a href="static/images/all_behavior_changes_consolidated (1)_page-0001.jpg" target="_blank" rel="noopener" aria-label="Open reasoning behavior changes figure at full size">
+            <img src="static/images/all_behavior_changes_consolidated (1)_page-0001.jpg" alt="Changes in protective and risky reasoning behaviors between unevolved and evolved agents" loading="lazy" decoding="async">
+          </a>
+          <figcaption><strong>Figure 6: Changes in safety-relevant reasoning behavior.</strong> Protective behaviors in the traces decline while risky behaviors become more prevalent after evolution.</figcaption>
+        </figure>
+
+        <figure class="reasoning-figure">
+          <a href="static/images/thread_state_slopes_2x2 (1)_page-0001.jpg" target="_blank" rel="noopener" aria-label="Open risk-thread status figure at full size">
+            <img src="static/images/thread_state_slopes_2x2 (1)_page-0001.jpg" alt="Active and resolved risk-thread percentages for unevolved and evolved agents overall and across controller, memory, and tools or skills surfaces" loading="lazy" decoding="async">
+          </a>
+          <figcaption><strong>Figure 7: Risk-thread resolution by evolution surface.</strong> Risk threads found in the traces are more likely to remain active after evolution, especially for memory and tools/skills.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End reasoning-trace analysis -->
+
+
+
+<!-- Extend SEABench -->
+<section class="section" id="extend-seabench">
+  <div class="container is-max-desktop">
+    <h2 class="title is-4">Extend SEABench</h2>
+    <div class="content">
+      <p>
+        <strong>Interested in contributing?</strong> Please <a href="https://github.com/SEABench-Endogenous-Misalignment/SEABench/pulls" target="_blank">submit a pull request </a> with your contributions. In addition, you can view an <a href="https://colab.research.google.com/github/SEABench-Endogenous-Misalignment/seabench/blob/master/notebooks/SEABench_Explore_and_Extend.ipynb" target="_blank" rel="noopener">interactive Colab notebook</a> to <strong>(a)</strong> Explore the benchmark, <strong>(b)</strong> Test it on a different model, and/or <strong>(c)</strong> Use the existing scripts to create new task sequences. 
+      </p>
+    </div>
+  </div>
+</section>
+<!-- End extend SEABench -->
+
+
+
+
+<!-- Youtube video 
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Video Presentation</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ End youtube video
+
+
+ Video carousel 
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Another Carousel</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/carousel1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/carousel2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/carousel3.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ End video carousel 
+
+
+
+
+
+
+Paper poster 
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+      <iframe src="static/pdfs/sample.pdf" width="100%" height="550"></iframe>
+    </div>
+  </div>
+</section>
+ End paper poster -->
+
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+        <pre id="bibtex-code"><code>@article{das2026seabench,
+      title={SEABench: Benchmarking Endogenous Misalignment In Self-Evolving Agents},
+      author={Das, Saswat and Viswanathan, Parvati and Donnelly, Daniel and Huang, Chang and Abdelnabi, Sahar and Fioretto, Ferdinando},
+      journal={arXiv preprint arXiv:2609.35596},
+      year={2026}
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            Template from <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse SEABench task prompts and evaluation criteria.">
+  <title>SEABench · Task Sequences</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/bulma.min.css">
+  <link rel="stylesheet" href="../static/css/index.css">
+  <link rel="stylesheet" href="../traces/assets/traces.css">
+  <link rel="icon" type="image/png" href="../static/images/agent-icon.png?v=2">
+  <script defer src="assets/tasks.js"></script>
+</head>
+<body>
+  <header class="trace-topbar">
+    <div class="trace-container trace-topbar-inner">
+      <a class="trace-brand" href="../index.html">SEABench</a>
+      <span class="trace-brand-sub">/ task prompts</span>
+    </div>
+  </header>
+
+  <section class="trace-hero">
+    <div class="trace-container">
+      <h1 class="title is-2">Task Prompts and Evaluation Criteria</h1>
+      <p class="subtitle is-5">
+        Browse the task sequences used by the main experiments. Inspect the task prompt and the utility or safety evaluation criteria for each task.
+      </p>
+    </div>
+  </section>
+
+  <main class="trace-container trace-main">
+    <section class="trace-controls" aria-label="Task filters">
+      <div class="trace-filter-row">
+        <div class="select is-small"><select id="filter-surface" aria-label="Filter by evolution surface"><option value="">All evolution surfaces</option></select></div>
+        <div class="select is-small"><select id="filter-role" aria-label="Filter by task role"><option value="">All task roles</option></select></div>
+        <div class="select is-small"><select id="filter-category" aria-label="Filter by category"><option value="">All categories</option></select></div>
+        <div class="select is-small"><select id="filter-harm" aria-label="Filter by harm type"><option value="">All harm types</option></select></div>
+        <label class="trace-search"><span aria-hidden="true">⌕</span><input id="filter-search" class="input is-small" type="search" placeholder="Search prompts and tasks" aria-label="Search tasks"></label>
+      </div>
+      <div class="trace-view-row">
+        <div class="select is-small"><select id="group-by" aria-label="Group tasks"><option value="surface">Group by surface</option><option value="category">Group by category</option><option value="harm_type">Group by harm type</option><option value="role_label">Group by task role</option><option value="none">No grouping</option></select></div>
+        <span class="trace-spacer"></span>
+        <span id="task-count" class="trace-muted"></span>
+        <button id="clear-filters" class="trace-link-button is-hidden" type="button">Clear filters</button>
+      </div>
+    </section>
+
+    <div id="task-groups"></div>
+    <div id="task-loading" class="trace-empty">Loading tasks...</div>
+    <div id="task-empty" class="trace-empty is-hidden">No tasks match these filters.</div>
+  </main>
+</body>
+</html>
